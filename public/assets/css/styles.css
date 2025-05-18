@@ -1,0 +1,158 @@
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #20c997;
+  --accent-color: #6f42c1;
+  --success-color: #198754;
+  --warning-color: #ffc107;
+  --danger-color: #dc3545;
+  --light-color: #f8f9fa;
+  --dark-color: #212529;
+}
+
+/* Sidebar styles */
+.sidebar {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 56px;
+  background-color: var(--dark-color);
+  transition: all 0.3s;
+  z-index: 999;
+}
+
+.sidebar .nav-link {
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: 0;
+  padding: 0.85rem 1.5rem;
+  font-size: 0.875rem;
+}
+
+.sidebar .nav-link:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar .nav-link.active {
+  color: #fff;
+  background-color: var(--primary-color);
+}
+
+.sidebar .nav-link i {
+  margin-right: 10px;
+}
+
+/* Main content area */
+.main-content {
+  margin-left: 250px;
+  padding: 20px;
+  padding-top: 76px;
+  transition: all 0.3s;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar {
+    margin-left: -250px;
+  }
+  .sidebar.active {
+    margin-left: 0;
+  }
+  .main-content {
+    margin-left: 0;
+  }
+  .main-content.active {
+    margin-left: 250px;
+  }
+}
+
+/* Card hover effects */
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Book cover styles */
+.book-cover {
+  height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.book-cover-lg {
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Status badges */
+.status-available {
+  background-color: var(--success-color);
+}
+
+.status-rented {
+  background-color: var(--warning-color);
+}
+
+.status-overdue {
+  background-color: var(--danger-color);
+}
+
+/* Custom utilities */
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* Auth pages */
+.auth-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f5f8fa;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom animation for notifications */
+@keyframes slideIn {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in {
+  animation: slideIn 0.3s ease forwards;
+}
+
+/* Book detail page */
+.book-details {
+  background-color: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+/* Related books carousel */
+.related-books {
+  padding: 20px 0;
+}
+
+.related-book-card {
+  min-height: 350px;
+}
